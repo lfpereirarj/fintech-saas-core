@@ -1,6 +1,6 @@
 import type { FastifyRequest, FastifyReply } from 'fastify';
 
-import { z } from 'zod';
+import { registerUserSchema } from '../schemas/users-schemas';
 import { UsersRepository } from '../../repositories/users-repository';
 import { RegisterUserUseCase } from '../../use-cases/register-user';
 
@@ -8,13 +8,7 @@ export async function registerUserController(
   request: FastifyRequest,
   reply: FastifyReply,
 ) {
-  const createUserSchema = z.object({
-    name: z.string().min(2, 'O nome deve conter no mínimo 2 caracteres.'),
-    email: z.string().email('O e-mail deve ser válido.'),
-    password: z.string().min(6, 'A senha deve conter no mínimo 6 caracteres.'),
-  });
-
-  const { name, email, password } = createUserSchema.parse(request.body);
+  const { name, email, password } = registerUserSchema.parse(request.body);
 
   try {
     const usersRepository = new UsersRepository();
