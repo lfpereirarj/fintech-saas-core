@@ -3,6 +3,16 @@ Content-Type: application/json
 
 {
   "name": "Seu Nome",
+  "email": "teste2@email.com",
+  "password": "senha_super_segura"
+}
+
+###
+
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
   "email": "teste@email.com",
   "password": "senha_super_segura"
 }

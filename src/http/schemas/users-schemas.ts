@@ -5,3 +5,8 @@ export const registerUserSchema = z.object({
   email: z.string().email('Formato de e-mail inválido.'),
   password: z.string().min(6, 'A senha precisa ter pelo menos 6 caracteres.'),
 });
+
+export const authenticateBodySchema = z.object({
+  email: z.string().email('Formato de e-mail inválido.'),
+  password: z.string().min(6, 'A senha precisa ter pelo menos 6 caracteres.'),
+});
