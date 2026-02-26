@@ -1,1 +1,1 @@
-console.log("Servidor do Organizador Financeiro Iniciado! 🚀");
+console.log('Servidor do Organizador Financeiro Iniciado! 🚀');
