@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:15
+    container_name: fintech_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+      POSTGRES_DB: fintech_db
+    ports:
+      - "5432:5432"
